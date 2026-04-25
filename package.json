@@ -1,0 +1,33 @@
+{
+  "name": "remotion-video",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio remotion/index.ts",
+    "render": "remotion render remotion/index.ts",
+    "still": "remotion still remotion/index.ts",
+    "upgrade": "remotion upgrade",
+    "skills:add": "remotion skills add",
+    "skills:update": "remotion skills update",
+    "voice:generate": "tsx scripts/generate-voice.ts"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.451",
+    "@remotion/cli": "^4.0.451",
+    "@remotion/google-fonts": "^4.0.451",
+    "@remotion/player": "^4.0.451",
+    "@remotion/renderer": "^4.0.451",
+    "@remotion/shapes": "^4.0.451",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "remotion": "^4.0.451"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "music-metadata": "^11.12.3",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}
