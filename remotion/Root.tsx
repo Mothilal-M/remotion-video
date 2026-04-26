@@ -8,6 +8,14 @@ import {
   DESKTOP_REEL_FPS,
 } from './DesktopReel';
 import {FlowReel, FLOW_DURATION_IN_FRAMES, FLOW_FPS} from './FlowReel';
+import {
+  ArchitectureVideo,
+  ARCH_DURATION_IN_FRAMES,
+  ARCH_FPS,
+  archSchema,
+  archDefaultProps,
+  calculateArchMetadata,
+} from './ArchitectureVideo';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -43,6 +51,17 @@ export const RemotionRoot: React.FC = () => {
         fps={FLOW_FPS}
         width={1080}
         height={1920}
+      />
+      <Composition
+        id="ArchitectureVideo"
+        component={ArchitectureVideo}
+        durationInFrames={ARCH_DURATION_IN_FRAMES}
+        fps={ARCH_FPS}
+        width={1920}
+        height={1080}
+        schema={archSchema}
+        defaultProps={archDefaultProps}
+        calculateMetadata={calculateArchMetadata}
       />
     </>
   );

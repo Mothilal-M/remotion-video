@@ -1,0 +1,9 @@
+{
+  "hook": 53.734,
+  "core": 49.58,
+  "reasoning": 57.704,
+  "acting": 58.593,
+  "loop": 58.776,
+  "safety": 57.757,
+  "closing": 51.069
+}
