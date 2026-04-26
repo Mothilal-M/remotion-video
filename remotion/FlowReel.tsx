@@ -191,16 +191,20 @@ const ProgressDots: React.FC<{frame: number}> = ({frame}) => {
 
 const OutroOverlay: React.FC = () => {
   const frame = useCurrentFrame();
-  const local = frame - FLOW_FRAMES.outroStart;
-  if (local < 0) return null;
   const {fps} = useVideoConfig();
-  const enter = spring({frame: local, fps, config: {damping: 18, stiffness: 110}});
+  const local = frame - FLOW_FRAMES.outroStart;
+  const enter = spring({
+    frame: Math.max(0, local),
+    fps,
+    config: {damping: 18, stiffness: 110},
+  });
   const fadeOut = interpolate(
     frame,
     [FLOW_FRAMES.outroEnd - 36, FLOW_FRAMES.outroEnd - 1],
     [1, 0],
     {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
   );
+  if (local < 0) return null;
   return (
     <AbsoluteFill style={{opacity: enter * fadeOut}}>
       <AbsoluteFill
